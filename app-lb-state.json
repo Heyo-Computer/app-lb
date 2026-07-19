@@ -1,0 +1,110 @@
+[
+  {
+    "id": "vault-86a37f",
+    "routes": [
+      {
+        "path_prefix": "/v/86a37f"
+      }
+    ],
+    "vm": {
+      "driver": "firecracker",
+      "image": "trapper-keeper",
+      "port": 8080,
+      "start_command": "setsid nohup /usr/local/bin/tk </dev/null >/var/log/tk.log 2>&1 &",
+      "size_class": "mini",
+      "disk_size_gb": 1,
+      "env_vars": {
+        "TK_API_KEY": "93548f2ebcd24a8ce472575262313a45a38385bd7f53a0c98ccb9ab6d8e7a157",
+        "TK_BIND": "0.0.0.0:8080",
+        "TK_DATA_DIR": "/workspace/data",
+        "TK_BASE_PATH": "/v/86a37f"
+      },
+      "ttl_seconds": 3600
+    },
+    "scaling": {
+      "min_replicas": 1,
+      "max_replicas": 1,
+      "warm_pool": 0,
+      "target_concurrency": 10,
+      "scale_to_zero_after_secs": 600,
+      "cold_start_timeout_secs": 120,
+      "drain_timeout_secs": 30
+    },
+    "health": {
+      "path": "/v/86a37f/healthz",
+      "timeout_secs": 2
+    }
+  },
+  {
+    "id": "vault-eb04f1",
+    "routes": [
+      {
+        "path_prefix": "/v/eb04f1"
+      }
+    ],
+    "vm": {
+      "driver": "firecracker",
+      "image": "trapper-keeper",
+      "port": 8080,
+      "start_command": "setsid nohup /usr/local/bin/tk </dev/null >/var/log/tk.log 2>&1 &",
+      "size_class": "mini",
+      "disk_size_gb": 1,
+      "env_vars": {
+        "TK_API_KEY": "ad110bc43e27c016fa1ebbc68e790890969628c1d3daae8ecebdd3a2186ada22",
+        "TK_BASE_PATH": "/v/eb04f1",
+        "TK_DATA_DIR": "/workspace/data",
+        "TK_BIND": "0.0.0.0:8080"
+      },
+      "ttl_seconds": 3600
+    },
+    "scaling": {
+      "min_replicas": 1,
+      "max_replicas": 1,
+      "warm_pool": 0,
+      "target_concurrency": 10,
+      "scale_to_zero_after_secs": 600,
+      "cold_start_timeout_secs": 120,
+      "drain_timeout_secs": 30
+    },
+    "health": {
+      "path": "/v/eb04f1/healthz",
+      "timeout_secs": 2
+    }
+  },
+  {
+    "id": "vault-eb1b74",
+    "routes": [
+      {
+        "path_prefix": "/v/eb1b74"
+      }
+    ],
+    "vm": {
+      "driver": "firecracker",
+      "image": "trapper-keeper",
+      "port": 8080,
+      "start_command": "setsid nohup /usr/local/bin/tk </dev/null >/var/log/tk.log 2>&1 &",
+      "size_class": "mini",
+      "disk_size_gb": 1,
+      "env_vars": {
+        "TK_BIND": "0.0.0.0:8080",
+        "TK_BASE_PATH": "/v/eb1b74",
+        "TK_API_KEY": "f3d51ab09773c84c20b5f73560f78f20ed4ce5a2ce141dbc3760ad657bbb4eed",
+        "TK_DATA_DIR": "/workspace/data"
+      },
+      "ttl_seconds": 3600
+    },
+    "scaling": {
+      "min_replicas": 1,
+      "max_replicas": 1,
+      "warm_pool": 0,
+      "target_concurrency": 10,
+      "scale_to_zero_after_secs": 600,
+      "cold_start_timeout_secs": 120,
+      "drain_timeout_secs": 30
+    },
+    "health": {
+      "path": "/v/eb1b74/healthz",
+      "timeout_secs": 2
+    }
+  }
+]
